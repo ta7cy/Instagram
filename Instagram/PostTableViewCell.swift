@@ -16,6 +16,8 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var captionLabel: UILabel!
     
+    @IBOutlet weak var commentButton: UIButton!
+    @IBOutlet weak var commentLabel: UILabel!
     
     
     override func awakeFromNib() {
@@ -35,7 +37,8 @@ class PostTableViewCell: UITableViewCell {
         
         self.captionLabel.text = "\(postData.name!) : \(postData.caption!)"
         let likeNumber = postData.likes.count
-        likeLabel.text = "\(likeNumber)"
+        let commentNumber = postData.comments.count
+        likeLabel.text = "いいね！\(likeNumber)件.コメント\(commentNumber)件"
         
         let formatter = DateFormatter()
         formatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale!
@@ -51,7 +54,23 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: UIControlState.normal)
         }
+        
+        if postData.comments.isEmpty {
+            
+            self.commentLabel.isHidden = true
+
+        }else{
+            self.commentLabel.isHidden = false
+            self.commentLabel.text = postData.comments.last!
+        }
+        
     }
+    
+    @IBAction func handleCommentButton(_ sender: Any) {
+        
+        
+    }
+    
 
     
 }

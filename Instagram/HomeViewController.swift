@@ -124,14 +124,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    // セルを取得してデータを設定する
-    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath) as! PostTableViewCell
-    cell.setPostData(postData: postArray[indexPath.row])
-    
-    // セル内のボタンのアクションをソースコードで設定する
-    cell.likeButton.addTarget(self, action:#selector(handleButton(sender:event:)), for:  UIControlEvents.touchUpInside)
-    
-    return cell
+        // セルを取得してデータを設定する
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath as IndexPath) as! PostTableViewCell
+        cell.setPostData(postData: postArray[indexPath.row])
+        
+        // セル内のボタンのアクションをソースコードで設定する
+        cell.likeButton.addTarget(self, action:#selector(handleButton(sender:event:)), for:  UIControlEvents.touchUpInside)
+        
+        cell.commentButton.addTarget(self, action: #selector(handleCommentButton(sender:event:)), for:
+            UIControlEvents.touchUpInside)
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -183,6 +186,40 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func handleCommentButton(sender:UIButton, event:UIEvent){
+        print("DEBUG_PRINT: commentボタンがタップされました。")
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+
+        
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        
+        //postDataを渡す
+        nextView.postData = postData
+        
+        self.present(nextView, animated: true, completion: nil)
+    
+    }
+    
+    /*
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueから遷移先のResultViewControllerを取得する
+        if segue.identifier == "Comment" {
+            print("DEBUG_PRINT: identifier = Comment")
+        }
+        let commentViewController:CommentViewController = segue.destination as! CommentViewController
+        // 遷移先のResultViewControllerで宣言しているx, yに値を代入して渡す
+        
+        commentViewController.postid = "test"
+    }*/
+
     
 
     override func didReceiveMemoryWarning() {

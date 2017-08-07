@@ -38,6 +38,7 @@
 		E33E8B091F36CD3200F08185 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E8B081F36CD3200F08185 /* PostViewController.swift */; };
 		E33E8B0B1F36CD5200F08185 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33E8B0A1F36CD5200F08185 /* SettingViewController.swift */; };
 		E3AB8A151F36D75B00C2CAE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3AB8A141F36D75B00C2CAE6 /* GoogleService-Info.plist */; };
+		E3D826D51F3755B4005E7647 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D826D41F3755B4005E7647 /* CommentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +90,7 @@
 		E33E8B081F36CD3200F08185 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		E33E8B0A1F36CD5200F08185 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		E3AB8A141F36D75B00C2CAE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E3D826D41F3755B4005E7647 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		F261098448EB1FBA4F7E6365 /* Pods-Instagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Instagram/Pods-Instagram.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +174,7 @@
 				E33E8AF01F36CBC400F08185 /* AppDelegate.swift */,
 				E33E8AF21F36CBC400F08185 /* ViewController.swift */,
 				E33E8AF41F36CBC400F08185 /* Main.storyboard */,
+				E3D826D41F3755B4005E7647 /* CommentViewController.swift */,
 				E33E8B0A1F36CD5200F08185 /* SettingViewController.swift */,
 				E33E8B081F36CD3200F08185 /* PostViewController.swift */,
 				E33E8B061F36CD0E00F08185 /* ImageSelectViewController.swift */,
@@ -340,6 +343,7 @@
 				E30271EC1F371FE500A89085 /* PostTableViewCell.swift in Sources */,
 				E33E8B0B1F36CD5200F08185 /* SettingViewController.swift in Sources */,
 				E33E8B051F36CCDD00F08185 /* HomeViewController.swift in Sources */,
+				E3D826D51F3755B4005E7647 /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
